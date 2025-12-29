@@ -2,16 +2,13 @@ import { useState } from "react";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import Form from "../components/Form";
+import { validateForm } from "../Utils/validateForm";
 
 type Errors = {
   name?: string;
   email?: string;
   tel?: string;
 };
-
-const nameRegex = /^[a-zA-Z\s]+$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const telRegex = /^\+?[0-9\s\-()]+$/;
 
 function UserInfo() {
   const [name, setName] = useState("");
@@ -22,37 +19,22 @@ function UserInfo() {
 
   const navigate = useNavigate();
 
-  const validateForm = (): boolean => {
-    const newErrors: Errors = {};
-
-    if (!name.trim()) {
-      newErrors.name = "This field is required";
-    } else if (!nameRegex.test(name)) {
-      newErrors.name = "Invalid name format";
-    }
-
-    if (!email.trim()) {
-      newErrors.email = "This field is required";
-    } else if (!emailRegex.test(email)) {
-      newErrors.email = "Enter a valid email address";
-    }
-
-    if (!tel.trim()) {
-      newErrors.tel = "This field is required";
-    } else if (!telRegex.test(tel)) {
-      newErrors.tel = "Enter a valid phone number";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (): void => {
-    if (validateForm()) {
+    const validationErrors = validateForm(name, email, tel);
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
       console.log({ name, email, tel });
       console.log("Form submitted successfully");
       navigate("/plan");
     }
+
+    // if (validateForm()) {
+    //   console.log({ name, email, tel });
+    //   console.log("Form submitted successfully");
+    //   navigate("/plan");
+    // }
   };
 
   return (

@@ -102,6 +102,7 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  outline: none;
 }
 .step-num {
   font-size: 0.8rem;
