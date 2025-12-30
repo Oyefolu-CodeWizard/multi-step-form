@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import userReducer from "./features/UserSlice";
+import userReducer from "./features/userSlice";
+import planReducer from "./features/planSlice";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
+    plan: planReducer,
   },
 });
 

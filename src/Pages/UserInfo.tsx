@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { setErrors } from "../features/UserSlice";
+import { setErrors } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import { validateForm } from "../Utils/validateForm";
 import Button from "../components/Button";
