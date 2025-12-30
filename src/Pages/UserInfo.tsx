@@ -1,40 +1,26 @@
-import { useState } from "react";
-import Button from "../components/Button";
+import { useAppDispatch, useAppSelector } from "../hooks";
+import { setErrors } from "../features/UserSlice";
 import { useNavigate } from "react-router-dom";
-import Form from "../components/Form";
 import { validateForm } from "../Utils/validateForm";
-
-type Errors = {
-  name?: string;
-  email?: string;
-  tel?: string;
-};
+import Button from "../components/Button";
+import Form from "../components/Form";
 
 function UserInfo() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-
-  const [errors, setErrors] = useState<Errors>({});
-
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const { name, email, tel } = useAppSelector((state) => state.user);
 
   const handleSubmit = (): void => {
     const validationErrors = validateForm(name, email, tel);
 
-    setErrors(validationErrors);
+    dispatch(setErrors(validationErrors));
 
     if (Object.keys(validationErrors).length === 0) {
       console.log({ name, email, tel });
       console.log("Form submitted successfully");
       navigate("/plan");
     }
-
-    // if (validateForm()) {
-    //   console.log({ name, email, tel });
-    //   console.log("Form submitted successfully");
-    //   navigate("/plan");
-    // }
   };
 
   return (
@@ -45,16 +31,7 @@ function UserInfo() {
           <p>Please provide your name, email address, and phone number.</p>
         </div>
 
-        <Form
-          name={name}
-          setName={setName}
-          email={email}
-          setEmail={setEmail}
-          tel={tel}
-          setTel={setTel}
-          errors={errors}
-          setErrors={setErrors}
-        />
+        <Form />
 
         <Button type="next" onClick={handleSubmit}>
           Next Step

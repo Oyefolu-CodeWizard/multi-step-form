@@ -1,30 +1,10 @@
-type Errors = {
-  name?: string;
-  email?: string;
-  tel?: string;
-};
+import { useAppDispatch, useAppSelector } from "../hooks";
+import { setName, setEmail, setTel } from "../features/UserSlice";
 
-type FormProps = {
-  name: string;
-  setName: React.Dispatch<React.SetStateAction<string>>;
-  email: string;
-  setEmail: React.Dispatch<React.SetStateAction<string>>;
-  tel: string;
-  setTel: React.Dispatch<React.SetStateAction<string>>;
-  errors: Errors;
-  setErrors: React.Dispatch<React.SetStateAction<Errors>>;
-};
+function Form() {
+  const dispatch = useAppDispatch();
+  const { name, email, tel, errors } = useAppSelector((state) => state.user);
 
-function Form({
-  name,
-  setName,
-  email,
-  setEmail,
-  tel,
-  setTel,
-  errors,
-  setErrors,
-}: FormProps) {
   return (
     <form action="" className="info-form">
       <div>
@@ -37,10 +17,9 @@ function Form({
           className={errors.name ? "input-error" : ""}
           placeholder="e.g. Stephen King"
           value={name}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setName(e.target.value);
-            setErrors((prev) => ({ ...prev, name: undefined }));
-          }}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            dispatch(setName(e.target.value))
+          }
           required
         />
       </div>
@@ -55,10 +34,9 @@ function Form({
           className={errors.email ? "input-error" : ""}
           placeholder="e.g. stephenking@lorem.com"
           value={email}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
-            setErrors((prev) => ({ ...prev, email: undefined }));
-          }}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            dispatch(setEmail(e.target.value))
+          }
           required
         />
       </div>
@@ -73,10 +51,9 @@ function Form({
           className={errors.tel ? "input-error" : ""}
           placeholder="e.g. +1 234 567 890"
           value={tel}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setTel(e.target.value);
-            setErrors((prev) => ({ ...prev, tel: undefined }));
-          }}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            dispatch(setTel(e.target.value))
+          }
           required
         />
       </div>

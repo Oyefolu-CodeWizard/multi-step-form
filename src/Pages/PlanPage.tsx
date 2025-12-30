@@ -9,7 +9,6 @@ type Plan = "arcade" | "advanced" | "pro";
 type PlanOption = "monthly" | "yearly";
 
 function PlanPage() {
-  const [isToggled, setIsToggled] = useState<boolean>(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan>("arcade");
   const [planOption, setPlanOption] = useState<PlanOption>("monthly");
   console.log(selectedPlan, planOption);
