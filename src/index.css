@@ -143,25 +143,29 @@ body {
   text-decoration: none;
 }
 .user-info,
-.plans {
+.plans,
+.add-ons {
   width: 38vw;
   height: 100%;
   /* border: 1px solid red; */
   padding: 40px 50px;
 }
 .user-info .info-container,
-.plans .plan-container {
+.plans .plan-container,
+.add-ons .add-ons-container {
   height: 100%;
   /* border: 1px solid red; */
 }
 .user-info h1,
-.plans h1 {
+.plans h1,
+.add-ons h1 {
   color: var(--marine-blue);
   font-weight: bold;
   margin-bottom: 5px;
 }
 .user-info p,
-.plans p {
+.plans p,
+.add-ons p {
   font-size: 0.93rem;
   color: var(--cool-gray);
 }
@@ -259,7 +263,8 @@ body {
   color: var(--marine-blue);
   font-weight: bold;
 }
-.plan-buttons {
+.plan-buttons,
+.add-ons-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -311,4 +316,51 @@ input:checked + .slider:before {
   font-size: 0.9rem;
   color: var(--cool-gray);
   font-weight: bold;
+}
+.add-ons-experience {
+  margin-top: 35px;
+}
+.experience {
+  width: 100%;
+  height: 70px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: border 0.9s;
+}
+.experience p {
+  font-size: 0.8rem;
+  color: var(--purplish-blue);
+}
+.experience:hover {
+  border: 1px solid var(--purplish-blue);
+}
+.experience.selected {
+  border: 1px solid var(--purplish-blue);
+  background-color: var(--magnolia);
+}
+.check-exp {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.check-exp input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--purplish-blue);
+  color: var(--white);
+  cursor: pointer;
+}
+.check-exp h4 {
+  color: var(--marine-blue);
+  margin-bottom: 5px;
+}
+.check-exp p {
+  font-size: 0.8rem;
+  color: var(--cool-gray);
 }

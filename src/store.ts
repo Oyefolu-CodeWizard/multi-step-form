@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import userReducer from "./features/userSlice";
 import planReducer from "./features/planSlice";
+import addonsReducer from "./features/addonsSlice";
 
 const store = configureStore({
   reducer: {
     user: userReducer,
     plan: planReducer,
+    addons: addonsReducer,
   },
 });
 
