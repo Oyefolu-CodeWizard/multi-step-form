@@ -104,6 +104,20 @@ body {
 .btn-back:hover {
   color: var(--marine-blue);
 }
+.btn-confirm {
+  background-color: var(--purplish-blue);
+  color: var(--white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  margin-left: auto;
+  margin-top: 100px;
+}
 .step {
   display: flex;
   align-items: center;
@@ -144,7 +158,8 @@ body {
 }
 .user-info,
 .plans,
-.add-ons {
+.add-ons,
+.summary {
   width: 38vw;
   height: 100%;
   /* border: 1px solid red; */
@@ -152,20 +167,23 @@ body {
 }
 .user-info .info-container,
 .plans .plan-container,
-.add-ons .add-ons-container {
+.add-ons .add-ons-container,
+.summary .summary-container {
   height: 100%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 .user-info h1,
 .plans h1,
-.add-ons h1 {
+.add-ons h1,
+.summary h1 {
   color: var(--marine-blue);
   font-weight: bold;
   margin-bottom: 5px;
 }
 .user-info p,
 .plans p,
-.add-ons p {
+.add-ons p,
+.summary p {
   font-size: 0.93rem;
   color: var(--cool-gray);
 }
@@ -264,7 +282,8 @@ body {
   font-weight: bold;
 }
 .plan-buttons,
-.add-ons-buttons {
+.add-ons-buttons,
+.summary-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -363,4 +382,71 @@ input:checked + .slider:before {
 .check-exp p {
   font-size: 0.8rem;
   color: var(--cool-gray);
+}
+.summary-details {
+  width: 100%;
+  height: 150px;
+  background-color: var(--magnolia);
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 40px;
+}
+.plan-info-cont {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 15px;
+}
+.plan-info-cont .info-price {
+  color: var(--marine-blue);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.plan-info h4 {
+  font-weight: bold;
+  color: var(--marine-blue);
+  margin-bottom: 5px;
+}
+.plan-info a {
+  color: var(--cool-gray);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.summary-change {
+  color: var(--cool-gray);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.addon-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.addon-item span,
+.summary-total h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--cool-gray);
+}
+.summary-add-ons {
+  margin-top: 15px;
+  border-top: 1px solid var(--light-gray);
+  padding-top: 15px;
+}
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+.summary-total span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--purplish-blue);
+}
+.summary-buttons {
+  margin-top: 45px;
 }
