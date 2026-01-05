@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Step from "./Step";
 
 function SideBar() {
+  const location = useLocation();
   return (
     <div className="sidebar">
       <NavLink to="user">
@@ -13,7 +14,12 @@ function SideBar() {
       <NavLink to="addons">
         <Step btnNumber={3} stepNumber="STEP 3" stepTitle="ADD-ONS" />
       </NavLink>
-      <NavLink to="summary">
+      <NavLink
+        to="summary"
+        className={({ isActive }) =>
+          isActive || location.pathname.includes("thanks") ? "active" : ""
+        }
+      >
         <Step btnNumber={4} stepNumber="STEP 4" stepTitle="SUMMARY" />
       </NavLink>
     </div>

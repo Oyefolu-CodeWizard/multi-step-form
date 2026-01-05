@@ -16,11 +16,13 @@ function PlanCards() {
         onClick={() => dispatch(setSelectedPlan("arcade"))}
       >
         <img src={iconArcade} alt="arcade icon" />
-        <h4>Arcade</h4>
-        <p>{planOption === "monthly" ? "$9/mo" : "$90/yr"}</p>
-        {planOption === "yearly" && (
-          <small className="free-plan">2 months free</small>
-        )}
+        <div>
+          <h4>Arcade</h4>
+          <p>{planOption === "monthly" ? "$9/mo" : "$90/yr"}</p>
+          {planOption === "yearly" && (
+            <small className="free-plan">2 months free</small>
+          )}
+        </div>
       </div>
       <div
         className={`card advanced ${
@@ -29,22 +31,26 @@ function PlanCards() {
         onClick={() => dispatch(setSelectedPlan("advanced"))}
       >
         <img src={iconAdvanced} alt="advanced icon" />
-        <h4>Advanced</h4>
-        <p>{planOption === "monthly" ? "$12/mo" : "$120/yr"}</p>
-        {planOption === "yearly" && (
-          <small className="free-plan">2 months free</small>
-        )}
+        <div>
+          <h4>Advanced</h4>
+          <p>{planOption === "monthly" ? "$12/mo" : "$120/yr"}</p>
+          {planOption === "yearly" && (
+            <small className="free-plan">2 months free</small>
+          )}
+        </div>
       </div>
       <div
         className={`card pro ${selectedPlan === "pro" ? "selected" : ""}`}
         onClick={() => dispatch(setSelectedPlan("pro"))}
       >
         <img src={iconPro} alt="pro icon" />
-        <h4>Pro</h4>
-        <p>{planOption === "monthly" ? "$15/mo" : "$150/yr"}</p>
-        {planOption === "yearly" && (
-          <small className="free-plan">2 months free</small>
-        )}
+        <div>
+          <h4>Pro</h4>
+          <p>{planOption === "monthly" ? "$15/mo" : "$150/yr"}</p>
+          {planOption === "yearly" && (
+            <small className="free-plan">2 months free</small>
+          )}
+        </div>
       </div>
     </div>
   );
