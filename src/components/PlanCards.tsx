@@ -16,7 +16,7 @@ function PlanCards() {
         onClick={() => dispatch(setSelectedPlan("arcade"))}
       >
         <img src={iconArcade} alt="arcade icon" />
-        <div>
+        <div className="card-plan">
           <h4>Arcade</h4>
           <p>{planOption === "monthly" ? "$9/mo" : "$90/yr"}</p>
           {planOption === "yearly" && (
@@ -31,7 +31,7 @@ function PlanCards() {
         onClick={() => dispatch(setSelectedPlan("advanced"))}
       >
         <img src={iconAdvanced} alt="advanced icon" />
-        <div>
+        <div className="card-plan">
           <h4>Advanced</h4>
           <p>{planOption === "monthly" ? "$12/mo" : "$120/yr"}</p>
           {planOption === "yearly" && (
@@ -44,7 +44,7 @@ function PlanCards() {
         onClick={() => dispatch(setSelectedPlan("pro"))}
       >
         <img src={iconPro} alt="pro icon" />
-        <div>
+        <div className="card-plan">
           <h4>Pro</h4>
           <p>{planOption === "monthly" ? "$15/mo" : "$150/yr"}</p>
           {planOption === "yearly" && (

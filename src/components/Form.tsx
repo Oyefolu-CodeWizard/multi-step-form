@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { setName, setEmail, setTel } from "../features/UserSlice";
+import { setName, setEmail, setTel } from "../features/userSlice";
 
 function Form() {
   const dispatch = useAppDispatch();

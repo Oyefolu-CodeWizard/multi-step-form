@@ -11,6 +11,7 @@ function PlanOption() {
       <label className="switch">
         <input
           type="checkbox"
+          className="plan-check"
           checked={planOption === "yearly"}
           onChange={() =>
             dispatch(

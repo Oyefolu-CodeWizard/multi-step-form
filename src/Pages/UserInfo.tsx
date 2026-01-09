@@ -33,9 +33,11 @@ function UserInfo() {
 
         <Form />
 
-        <Button type="next" onClick={handleSubmit}>
-          Next Step
-        </Button>
+        <div className="user-button">
+          <Button type="next" onClick={handleSubmit}>
+            Next Step
+          </Button>
+        </div>
       </div>
     </div>
   );
