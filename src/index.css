@@ -519,6 +519,7 @@ input:checked + .slider:before {
     background-color: var(--white);
     margin: 0 auto;
     padding: 24px;
+    padding-bottom: 120px;
     border-radius: 12px;
     position: absolute;
     top: 110px;
